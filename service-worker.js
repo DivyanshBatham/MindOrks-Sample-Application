@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/MindOrks-Sample-Application/precache-manifest.bf2946db0e05bccf9f97d8fc87bc549b.js"
+  "/MindOrks-Sample-Application/precache-manifest.db9b8de2bb27bd54e0dafa5171d639fa.js"
 );
 
 workbox.clientsClaim();

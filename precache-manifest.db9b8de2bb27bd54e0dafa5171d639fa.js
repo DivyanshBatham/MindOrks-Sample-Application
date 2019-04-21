@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/MindOrks-Sample-Application/static/css/main.4a16e4e2.chunk.css"
   },
   {
-    "revision": "6f46a8c03c599c6b055c10035ceed874",
+    "revision": "ee02686a5ad4cbdc5831e795e0eca46f",
     "url": "/MindOrks-Sample-Application/index.html"
   }
 ];

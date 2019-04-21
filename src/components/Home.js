@@ -8,19 +8,17 @@ class Home extends Component {
   }
   render() {
     return (
-      <main>
+      <>
         <section className="about-section">
           <div className="container">
-              <div className="section__heading">./components/About</div>
-
-              <p className="section__description">
-                This component was created to provide an overview of the project.
-                {/* I created this project for the fullfillment of the recuiting process at MindOrks. */}
-              </p>
+            <div className="section__heading">./components/About</div>
+            <p>
+              This component was created to provide an overview of the project.
+            </p>
           </div>
         </section>
-        <Projects />
-      </main>
+        <Projects projectCount={3} />
+      </>
     );
   }
 }

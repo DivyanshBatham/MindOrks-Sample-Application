@@ -18,3 +18,15 @@
 @mixin transition {
     transition: all ease-in-out .2s;
 }
+
+@mixin below($width) {
+    @media (max-width: $width) {
+      @content;
+    }
+  }
+
+  @mixin above($width) {
+    @media (min-width: $width) {
+      @content;
+    }
+  }

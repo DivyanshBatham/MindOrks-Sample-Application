@@ -1,58 +1,45 @@
-// @import url('https://fonts.googleapis.com/css?family=Pacifico|Poppins');
+@import "./variables.scss";
 @import "./mixins.scss";
 
-// .App {
-//   text-align: center;
-// }
+#root {
+  @include flex("column");
+  height: 100vh;
+  overflow-y: scroll;
+  // Added this to stop the content shifting on pages with less content.
+}
 
-// .App-logo {
-//   animation: App-logo-spin infinite 20s linear;
-//   height: 40vmin;
-//   pointer-events: none;
-// }
+main {
+  flex: 1;
+  background: $lightBlack;
+}
 
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
+.primaryButton {
+  background: $darkWhite;
+  color: $lightBlack;
+  padding: 0.6em 1.2em;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  @include Poppins(1rem, 600);
 
-// .App-link {
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+}
 
 nav {
-  position: fixed;
+  position: sticky;
   top: 0;
+  z-index: 1000;
   width: 100%;
-  background: #202020; // On scroll
-  // background: #323232;
+  background: $darkBlack;
   padding: 0.8rem 0;
 
   .nav {
-    // background: crimson;
     justify-content: space-between;
     display: flex;
     align-items: center;
-    // padding: 0.8rem 0;
 
     &__logo-container {
       height: 2.5rem;
-      // margin: 0.8rem 0;
 
       img {
         height: 100%;
@@ -61,12 +48,10 @@ nav {
 
     &__logo {
       @include Pacifico(2rem);
-      // text-decoration: none;
-      color: #eeeeee;
+      color: $darkWhite;
     }
 
     ul {
-      // flex: 1;
       height: 100%;
       list-style: none;
       padding: 0;
@@ -78,16 +63,16 @@ nav {
         display: inline-block;
 
         a {
-          color: #cccccc;
+          color: $lightWhite;
           text-decoration: none;
           position: relative;
 
           &:hover {
-            color: #eeeeee;
+            color: $darkWhite;
           }
 
           &.active {
-            color: #eeeeee;
+            color: $darkWhite;
             &::after {
               content: "";
               display: block;
@@ -95,7 +80,7 @@ nav {
               width: 100%;
               position: absolute;
               top: 100%;
-              background-color: #cccccc;
+              background-color: $lightWhite;
               z-index: 15;
             }
           }
@@ -106,85 +91,126 @@ nav {
 }
 
 section {
-  color: #cccccc;
-  min-height: 100vh;
+  padding: 3em 0;
+  color: $lightWhite;
   .section__heading {
     @include Pacifico(2rem);
   }
 }
 
-section.about-section {
-  height: 100vh;
-  background: #323232;
-  @include flex("row") {
-    justify-content: center;
-    align-items: center;
+section.project-details-section {
+  .project__skills {
+    display: flex;
+    flex-wrap: wrap;
+    span {
+      padding: 0.4em 0.8em;
+      background: $darkBlack;
+      border-radius: 5px;
+      margin: 0 0.2em 0.2em;
+      @include transition();
+    }
+  }
+
+  .project__links {
+    margin-top: 3rem;
+
+    .primaryButton {
+      margin-right: 1rem;
+    }
   }
 }
 
 section.contact-section {
-  height: 100vh;
-  background: #323232;
-  padding-top: 10rem;
-  // @include flex("row") {
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-
   form {
-    // background:purple;
     max-width: 30rem;
-    margin: 0 auto;
+    margin: 3rem auto;
 
     label {
       display: block;
       font-size: 1rem;
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
     }
-    
+
     input {
       display: block;
       width: 100%;
       padding: 0.8rem;
       border-radius: 5px;
       border: 0;
+      margin-bottom: 0.8rem;
+      background: $mediumBlack;
+      color: $darkWhite;
+      @include Poppins(1rem);
     }
-    
+
     textarea {
-      // display: block;
+      background: $mediumBlack;
+      margin-bottom: 0.8rem;
+      color: $darkWhite;
+      @include Poppins(1rem);
+      padding: 0.8rem;
       border: 0;
       border-radius: 5px;
       height: 15rem;
       width: 100%;
       resize: none;
     }
+
+    .primaryButton {
+      width: 100%;
+    }
   }
 }
 
 section.projects-section {
-  background: #323232;
-  padding: 3rem 0rem;
+  background: $lightBlack;
 
   .projects {
-    // color: #cccccc;
     @include flex("column") {
-      // align-items: center;
       justify-content: space-evenly;
     }
 
     &__grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       grid-gap: 1rem;
 
+      @include above(576px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include above(768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include above(992px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       .project-container {
-        background: #282828;
-        padding-top: 100%;
+        background: $mediumBlack;
+        padding-top: 50%;
+        @include above(576px) {
+          padding-top: 100%;
+        }
         position: relative;
         cursor: pointer;
         border-radius: 8px;
         @include transition();
-        color: #cccccc;
+        color: $lightWhite;
         text-decoration: none;
+
+        &-more {
+          background: $darkBlack;
+          .project {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            &:hover {
+              padding-bottom: 2rem;
+            }
+          }
+        }
 
         .project {
           position: absolute;
@@ -193,15 +219,34 @@ section.projects-section {
           width: 100%;
           top: 0;
           @include transition();
+          
+          &__title {
+            font-weight: 600;
+            font-size: 1.2rem;
+          }
+          &:hover {
+            padding-top: 2rem;
+            span {
+              background: $lightBlack;
+            }
+          }
+
+          &__skills {
+            display: flex;
+            flex-wrap: wrap;
+            span {
+              padding: 0.2em 0.4em;
+              background: $darkBlack;
+              border-radius: 5px;
+              margin: 0 0.2em 0.2em;
+              @include transition();
+            }
+          }
         }
 
         &:hover {
           border-radius: 1rem;
-          background: grey;
-
-          .project {
-            padding: 3rem;
-          }
+          background: $darkBlack;
         }
       }
     }
@@ -209,8 +254,8 @@ section.projects-section {
 }
 
 footer {
-  color: #cccccc;
-  background: #202020;
+  color: $lightWhite;
+  background: $darkBlack;
   padding: 1rem 0;
   text-align: center;
 }

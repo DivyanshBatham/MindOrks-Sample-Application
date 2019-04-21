@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "CodeEngima",
+      "description": "It is a web application which was used for hosting the Code Enigma Season 3 (2018), a coding competition which is being held in LNCT Bhopal annually for the last three years (2016-18).",
+      "repository": "https://github.com/DivyanshBatham/CodeEnigma",
+      "skills": ["Node.js", "Express", "MongoDB", "Socket.io", "EJS", "CSS", "JS"]
+    },
+    {
+      "id": "2",
+      "title": "Wild Tiger Restaurant",
+      "description": "My design for the Grip Project #2 (Rebuild a Restaurant Website). Grip stands for Grind Reel Incentive Project, it's basically a community project/contest in which the members of the Grind Reel (Discord Server) participate to flourish the portfolios and practice their skills.",
+      "repository": "https://github.com/DivyanshBatham/grip-wildtiger-client",
+      "live": "https://grip-wildtiger.firebaseapp.com",
+      "skills": ["React.js", "Firebase", "SCSS"]
+    },
+    {
+      "id": "3",
+      "title": "Game of Life",
+      "description": "My implementation of John Horton Convoy's Game of Life (Cellular Automaton) with React.js",
+      "repository": "https://github.com/DivyanshBatham/Game-of-Life",
+      "live": "https://divyanshbatham.github.io/Game-of-Life",
+      "skills": ["React.js", "CSS"]
+    },
+    {
+      "id": "4",
+      "title": "Unofficial-CodersClub-SearchTool",
+      "description": "This is a project which I create for my college juniors, so that they can learn how to send a Pull Request.",
+      "repository": "https://github.com/DivyanshBatham/Unofficial-CodersClub-SearchTool",
+      "live": "https://divyanshbatham.github.io/Unofficial-CodersClub-SearchTool/",
+      "skills": ["React.js", "CSS"]
+    },
+    {
+      "id": "5",
+      "title": "CPPSUDUKO",
+      "description": "CPP SUDUKO is a console based Suduko Game created in C++.",
+      "repository": "https://github.com/DivyanshBatham/CPPSUDUKO",
+      "skills": ["C++"]
+    }
+  ]
+}

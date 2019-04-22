@@ -3,7 +3,11 @@ import React, { Component } from "react";
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: "",
+      email: "",
+      message: "",
+    };
   }
 
   handleChange = e => {
@@ -45,9 +49,10 @@ class Contact extends Component {
               <textarea
                 id="message"
                 name="message"
-                value={this.state.email}
+                value={this.state.message}
                 onChange={this.handleChange}
               />
+              
               <button className="primaryButton" onClick={this.handleSubmit}>Submit</button>
             </form>
           </div>
